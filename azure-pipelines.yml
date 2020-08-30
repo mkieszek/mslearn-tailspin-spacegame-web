@@ -7,7 +7,7 @@ trigger:
       - npm
   
   variables:
-    #buildConfiguration: 'Release'
+    buildConfiguration: 'Release'
     wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
     dotnetSdkVersion: '3.1.300'
   
@@ -40,11 +40,11 @@ trigger:
   
   - template: templates/build.yml
     parameters:
-      buildConfiguration: 'Debug'
+      buildConfiguration: Debug
   
   - template: templates/build.yml
     parameters:
-      buildConfiguration: 'Release'
+      buildConfiguration: Release
   
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: drop'
